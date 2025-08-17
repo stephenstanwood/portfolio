@@ -1,22 +1,67 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>stanwood.dev</title>
-    <style>
-      body { font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 0; }
-      .wrap { max-width: 800px; margin: 48px auto; padding: 0 20px; }
-      .card { border: 1px solid #e5e7eb; border-radius: 14px; padding: 20px; margin: 12px 0; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stephen Stanwood — stanwood.dev</title>
+    <meta name="description" content="Projects I'm tinkering with. :)" />
+    <meta property="og:title" content="Stephen Stanwood — stanwood.dev" />
+    <meta property="og:description" content="Projects I'm tinkering with." />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Tailwind config tweaks (optional)
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] }
+          }
+        }
+      }
+    </script>
   </head>
-  <body>
-    <div class="wrap">
-      <h1>Stephen Stanwood</h1>
-      <p>Projects I’m tinkering with:</p>
-      <div class="card">
-        <a href="/wtwtw">WTWTW (What To Watch This Week)</a>
-      </div>
-    </div>
+  <body class="bg-neutral-50 text-neutral-900 antialiased">
+    <header class="max-w-3xl mx-auto px-6 pt-12 pb-6">
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Stephen Stanwood</h1>
+      <p class="mt-2 text-neutral-600">Projects I’m tinkering with.</p>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 pb-20">
+      <section class="space-y-4">
+        <!-- Project card: WTWTW -->
+        <a href="/wtwtw" class="block rounded-2xl border border-neutral-200 bg-white p-5 sm:p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h2 class="text-lg sm:text-xl font-semibold">WTWTW <span class="text-sm font-medium text-neutral-500">(What To Watch This Week)</span></h2>
+              <p class="mt-1 text-neutral-600">
+                Mon–Fri picks of the best game overlapping 5–8pm PT, ranked: Steelers → Warriors → Valkyries → Cubs → Giants.
+              </p>
+            </div>
+            <div class="shrink-0 rounded-full px-3 py-1 text-xs font-semibold bg-neutral-100 text-neutral-700">Web App</div>
+          </div>
+          <div class="mt-4 flex items-center gap-3 text-sm text-neutral-500">
+            <span>Live at <span class="font-medium text-neutral-700">/wtwtw</span></span>
+            <span aria-hidden="true">•</span>
+            <span>ESPN scoreboards</span>
+          </div>
+        </a>
+
+        <!-- Add more projects by duplicating the block above -->
+      </section>
+
+      <!-- Footer -->
+      <footer class="mt-10 border-t border-neutral-200 pt-6 text-sm text-neutral-500">
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
+          <span>© <span id="y"></span> Stephen Stanwood</span>
+          <span aria-hidden="true">•</span>
+          <a class="hover:text-neutral-700 underline decoration-neutral-300 underline-offset-4" href="https://wtwtw.stanwood.dev" target="_blank" rel="noopener">Direct WTWTW subdomain</a>
+        </div>
+      </footer>
+    </main>
+
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   </body>
 </html>
